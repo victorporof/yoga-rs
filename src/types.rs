@@ -17,11 +17,13 @@ pub use ffi_types::style_unit::*;
 pub use ffi_types::undefined::*;
 pub use ffi_types::wrap::*;
 use ordered_float::OrderedFloat;
+use self_tokenize_macro::SelfTokenize;
+use self_tokenize_trait::ToCustomTokens;
 use std::any::Any;
 use std::ops::Deref;
 use std::os::raw::c_void;
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub enum FlexStyle {
 	AlignContent(Align),
@@ -77,7 +79,7 @@ pub enum FlexStyle {
 	Width(StyleUnit),
 }
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub struct Layout {
 	left: OrderedFloat<f32>,

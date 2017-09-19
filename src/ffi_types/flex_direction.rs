@@ -1,7 +1,9 @@
 use internal;
+use self_tokenize_macro::SelfTokenize;
+use self_tokenize_trait::ToCustomTokens;
 
 #[repr(u32)]
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub enum FlexDirection {
 	Column = 0,

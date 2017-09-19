@@ -1,8 +1,10 @@
 use internal;
+use self_tokenize_macro::SelfTokenize;
+use self_tokenize_trait::ToCustomTokens;
 pub use internal::YGMeasureMode as YGInternalMeasureMode;
 
 #[repr(u32)]
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub enum MeasureMode {
 	Undefined = 0,

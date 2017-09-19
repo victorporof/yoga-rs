@@ -1,6 +1,7 @@
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
+#![feature(proc_macro)]
 
 extern crate ordered_float;
 #[cfg(feature = "serde_support")]
@@ -8,6 +9,8 @@ extern crate serde;
 #[macro_use]
 #[cfg(feature = "serde_support")]
 extern crate serde_derive;
+extern crate self_tokenize_macro;
+extern crate self_tokenize_trait;
 
 // API created by bindgen
 mod internal {

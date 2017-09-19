@@ -1,7 +1,9 @@
 use internal;
 use ordered_float::OrderedFloat;
+use self_tokenize_macro::SelfTokenize;
+use self_tokenize_trait::ToCustomTokens;
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub enum StyleUnit {
 	UndefinedValue,

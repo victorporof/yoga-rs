@@ -16,6 +16,8 @@ bindgen = "0.23.0"
 gcc = "0.3.54"
 
 [dependencies]
+self-tokenize-macro = { git = "https://github.com/victorporof/rust-self-tokenize.git" }
+self-tokenize-trait = { git = "https://github.com/victorporof/rust-self-tokenize.git" }
 ordered-float = "0.5.0"
 serde = { version = "1.0.27", optional = true }
 serde_derive = { version = "1.0.27", optional = true }
