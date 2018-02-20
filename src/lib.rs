@@ -63,6 +63,10 @@ impl Node {
 		}
 	}
 
+	pub fn ptr(&self) -> usize {
+		self.inner_node as usize
+	}
+
 	pub fn reset(&mut self) {
 		unsafe {
 			internal::YGNodeReset(self.inner_node);
