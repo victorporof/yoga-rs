@@ -12,6 +12,12 @@ fn main() {
 	c.file("src/c/YGEnums.c");
 	c.file("src/c/YGNodeList.c");
 	c.file("src/c/Yoga.c");
+
+	c.flag("-fno-omit-frame-pointer");
+	c.flag("-fexceptions");
+	c.flag("-O3");
+	c.flag("-fPIC");
+
 	c.compile("libyoga.a");
 
 	let bindings = bindgen::Builder::default()

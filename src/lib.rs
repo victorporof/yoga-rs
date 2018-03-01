@@ -4,13 +4,13 @@
 #![feature(proc_macro)]
 
 extern crate ordered_float;
+extern crate self_tokenize_macro;
+extern crate self_tokenize_trait;
 #[cfg(feature = "serde_support")]
 extern crate serde;
 #[macro_use]
 #[cfg(feature = "serde_support")]
 extern crate serde_derive;
-extern crate self_tokenize_macro;
-extern crate self_tokenize_trait;
 
 // API created by bindgen
 mod internal {
@@ -867,6 +867,10 @@ impl Node {
 
 	pub fn is_dirty(&self) -> bool {
 		unsafe { internal::YGNodeIsDirty(self.inner_node) }
+	}
+
+	pub fn mark_dirty(&self) {
+		unsafe { internal::YGNodeMarkDirty(self.inner_node) }
 	}
 
 	pub fn copy_style(&self, src_node: &Node) {
